@@ -1,104 +1,130 @@
 /* General Styling */
 body {
-    background-image: url('bghadits.png'), url('pattern-top.png');
-    background-repeat: repeat-x, no-repeat;
-    background-size: contain, cover;
-    background-position: top center, bottom center;
-    background-color: #f8f8f8;
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    margin: 0;
-  }
-  
+  background-image: url('bghadits.png'), url('pattern-top.png');
+  background-repeat: repeat-x, no-repeat;
+  background-size: contain, cover;
+  background-position: top center, bottom center;
+  background-color: #f8f8f8;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.container {
+  text-align: center;
+  max-width: 32rem;
+  padding: 1rem;
+  margin: 0 auto;
+}
+
+.logo {
+  width: 50%;
+  max-width: 200px;
+  margin-bottom: 1rem;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  color: #826a5c;
+}
+
+.search-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: 100%; /* Full width to center-align content */
+}
+
+.search-input-container {
+  position: relative;
+  width: 100%;
+}
+
+.search-input {
+  width: 100%;
+  padding: 0.5rem;
+  background-color: #f1f1f1;
+  border: 1px solid #ccc;
+  border-radius: 0.375rem;
+  color: #333;
+  font-size: 1rem;
+}
+
+.search-button {
+  position: absolute;
+  top: 50%;
+  right: 0.75rem;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.search-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  fill: #666;
+}
+
+.quantity-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.quantity-input {
+  padding: 0.5rem 0.75rem;
+  width: 2.5rem;
+  background-color: #f1f1f1;
+  border: 1px solid #ccc;
+  border-radius: 0.375rem;
+  color: #333;
+  text-align: center;
+}
+
+.search-action-button {
+  padding: 0.5rem 1.5rem;
+  background-color: #826a5c;
+  color: white;
+  border: 2px solid #826a5c;
+  border-radius: 0.375rem;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%; /* Full width to align with input */
+  max-width: 16rem; /* Align width with search input */
+  transition: background-color 0.3s ease;
+}
+
+.search-action-button:hover {
+  background-color: transparent;
+  color: #826a5c;
+}
+
+@media (max-width: 768px) {
   .container {
-    text-align: center;
-    max-width: 32rem;
-    margin: 0 auto;
+    padding: 1rem;
   }
-  
-  .logo {
-    width: 50%;
-    max-width: 200px;
-    margin-bottom: 1rem;
-  }
-  
+
   .title {
-    font-size: 2rem;
-    font-weight: bold;
-    margin-bottom: 1.5rem;
-    color: #826a5c;
+    font-size: 1.5rem;
   }
-  
-  .search-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-  }
-  
-  .search-input-container {
-    position: relative;
-    width: 100%;
-    max-width: 16rem;
-  }
-  
-  .search-input {
-    width: 100%;
-    padding: 0.5rem 1rem;
-    background-color: #f1f1f1;
-    border: 1px solid #ccc;
-    border-radius: 0.375rem;
-    color: #333;
-    font-size: 1rem;
-  }
-  
-  .search-button {
-    position: absolute;
-    top: 50%;
-    right: 0.75rem;
-    transform: translateY(-50%);
-    background: transparent;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .search-icon {
-    width: 1.25rem;
-    height: 1.25rem;
-    fill: #666;
-  }
-  
-  .quantity-container {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-  
-  .quantity-input {
-    padding: 0.5rem 0.75rem;
-    width: 5rem;
-    background-color: #f1f1f1;
-    border: 1px solid #ccc;
-    border-radius: 0.375rem;
-    color: #333;
-  }
-  
+
+  .search-input-container,
   .search-action-button {
-    padding: 0.75rem 1.5rem;
-    background-color: #826a5c;
-    color: white;
-    border: 2px solid #826a5c;
-    border-radius: 0.375rem;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+    width: 100%; /* Full width for better mobile layout */
   }
-  
-  .search-action-button:hover {
-    background-color: transparent;
-    color: #826a5c;
+
+  .search-input {
+    font-size: 0.9rem;
   }
-  
+
+  .quantity-input {
+    width: 2rem;
+  }
+}
