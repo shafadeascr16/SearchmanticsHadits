@@ -1,105 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Searchmantics Hadits</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link href="styleresult.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      crossorigin="anonymous"
+    />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Searchmantics Hadits</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
-  <link href="styleresult.css" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-    crossorigin="anonymous" />
+    <script>
+      function toggleSidebar() {
+        const sidebar = document.getElementById("sidebar");
+        sidebar.classList.toggle("-translate-x-full");
+      }
 
-  <script>
-    function toggleSidebar() {
-      const sidebar = document.getElementById("sidebar");
-      sidebar.classList.toggle("-translate-x-full");
-    }
+      function copyToClipboard(text) {
+        navigator.clipboard.writeText(text).then(() => {
+          alert("Hadits copied to clipboard!");
+        });
+      }
 
-    function copyToClipboard(text) {
-      navigator.clipboard.writeText(text).then(() => {
-        alert("Hadits copied to clipboard!");
-      });
-    }
+      function shareHadits() {
+        alert("Share functionality is not implemented yet.");
+      }
+    </script>
+  </head>
 
-    function shareHadits() {
-      alert("Share functionality is not implemented yet.");
-    }
-  </script>
-</head>
-
-<body class="bg-gray-50">
-  <!-- Sidebar -->
-  <div id="sidebar"
-    class="fixed top-0 left-0 h-full w-64 bg-white shadow-lg transform -translate-x-full transition-transform duration-300 z-50"
-    style="background-color: #f1f1f1">
-    <div class="p-6">
-      <ul class="mt-8 space-y-4">
-        <li>
-          <a href="#" class="flex items-center hover:text-gray-800" style="color: #826a5c">Shahih Muslim</a>
-        </li>
-        <li>
-          <a href="#" class="flex items-center hover:text-gray-800" style="color: #826a5c">Shahih Bukhori</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- Sidebar Toggle Button -->
-  <div class="fixed top-4 left-4 z-50">
-    <button onclick="toggleSidebar()" class="text-gray-700 p-2 rounded-md transition-all duration-200">
-      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-        style="color: #826a5c">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-      </svg>
-    </button>
-  </div>
-
-  <!-- Main Content -->
-  <div class="w-full max-w-full mx-auto p-8 px-4 sm:px-6 md:px-8 lg:px-12">
-    <!-- Title -->
-    <div class="text-center mt-12">
-      <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold" style="color: #826a5c">
-        Searchmantics Hadits
-      </h1>
-    </div>
-
-    <!-- Search Form -->
-    <div class="search-form">
-      <div class="search-container">
-        <input type="text" placeholder="Search" class="search-input" />
-        <button class="search-button">
-          <svg xmlns="http://www.w3.org/2000/svg" class="search-icon" fill="none" viewBox="0 0 24 24"
-            stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M21 21l-4.35-4.35M10 4a6 6 0 100 12 6 6 0 000-12z" />
-          </svg>
-          <span>Search</span>
-        </button>
+  <body class="bg-gray-50">
+    <!-- Sidebar -->
+    <div
+      id="sidebar"
+      class="fixed top-0 left-0 h-full w-64 bg-white shadow-lg transform -translate-x-full transition-transform duration-300 z-50"
+      style="background-color: #f1f1f1"
+    >
+      <div class="p-6">
+        <ul class="mt-8 space-y-4">
+          <li>
+            <a
+              href="#"
+              class="flex items-center hover:text-gray-800"
+              style="color: #826a5c"
+              >Shahih Muslim</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="flex items-center hover:text-gray-800"
+              style="color: #826a5c"
+              >Shahih Bukhori</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="flex items-center hover:text-gray-800"
+              style="color: #826a5c"
+              >Sunan Ibnu Majah</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="flex items-center hover:text-gray-800"
+              style="color: #826a5c"
+              >Sunan An-Nasa'i</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="flex items-center hover:text-gray-800"
+              style="color: #826a5c"
+              >Sunan Tirmidzi</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="flex items-center hover:text-gray-800"
+              style="color: #826a5c"
+              >Sunan Abu Dawud</a
+            >
+          </li>
+        </ul>
       </div>
     </div>
 
-    <!-- Hadits Results -->
-    <div class="hadits-container" id="haditsContainer"></div>
+    <!-- Sidebar Toggle Button -->
+    <div class="fixed top-4 left-4 z-50">
+      <button
+        onclick="toggleSidebar()"
+        class="text-gray-700 p-2 rounded-md transition-all duration-200"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="w-6 h-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          style="color: #826a5c"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"
+          />
+        </svg>
+      </button>
+    </div>
 
-  </div>
+    <!-- Main Content -->
+    <div class="w-full max-w-full mx-auto p-8 px-4 sm:px-6 md:px-8 lg:px-12">
+      <!-- Title -->
+      <div class="text-center mt-12">
+        <h1
+          class="text-2xl sm:text-3xl md:text-4xl font-bold"
+          style="color: #826a5c"
+        >
+          Searchmantics Hadits
+        </h1>
+      </div>
 
-  <script>
-    const haditsData = [
-      {
-        no: 'Shahih Muslim - Hadits No. 1234',
-        arab: 'لحَدَّثَنَا مُسَدَّدٌ قَالَ حَدَّثَنَا يَحْيَى عَنْ شُعْبَةَ عَنْ قَتَادَةَ عَنْ أَنَسٍ رَضِيَ اللَّهُ عَنْهُ عَنْ النَّبِيِّ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ وَعَنْ حُسَيْنٍ الْمُعَلِّمِ قَالَ حَدَّثَنَا قَتَادَةُ عَنْ أَنَسٍ عَنْ النَّبِيِّ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ قَالَ لَا يُؤْمِنُ أَحَدُكُمْ حَتَّى يُحِبَّ لِأَخِيهِ مَا يُحِبُّ لِنَفْسِهِ',
-        translation: "Telah menceritakan kepada kami Musaddad berkata, telah menceritakan kepada kami Yahya dari Syubah dari Qotadah dari Anas dari Nabi shallallahu alaihi wasallam Dan dari Husain Al Mualim berkata, telah menceritakan kepada kami Qotadah dari Anas dari Nabi shallallahu alaihi wasallam, beliau bersabda: Tidaklah beriman seseorang dari kalian sehingga dia mencintai untuk saudaranya sebagaimana dia mencintai untuk dirinya sendiri"
-      },
-      {
-        no: 'Shahih Bukhari - Hadits No. 5678',
-        arab: 'حَدَّثَنَا مُسَدَّدٌ قَالَ حَدَّثَنَا يَحْيَى عَنْ شُعْبَةَ عَنْ قَتَادَةَ عَنْ أَنَسٍ رَضِيَ اللَّهُ عَنْهُ عَنْ النَّبِيِّ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ وَعَنْ حُسَيْنٍ الْمُعَلِّمِ قَالَ حَدَّثَنَا قَتَادَةُ عَنْ أَنَسٍ عَنْ النَّبِيِّ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ قَالَ لَا يُؤْمِنُ أَحَدُكُمْ حَتَّى يُحِبَّ لِأَخِيهِ مَا يُحِبُّ لِنَفْسِهِإِنَّمَا الأَعْمَالُ بِالنِّيَّاتِ',
-        translation: "Telah menceritakan kepada kami Musaddad berkata, telah menceritakan kepada kami Yahya dari Syubah dari Qotadah dari Anas dari Nabi shallallahu alaihi wasallam Dan dari Husain Al Mualim berkata, telah menceritakan kepada kami Qotadah dari Anas dari Nabi shallallahu alaihi wasallam, beliau bersabda: Tidaklah beriman seseorang dari kalian sehingga dia mencintai untuk saudaranya sebagaimana dia mencintai untuk dirinya sendiri"
-      },
-      // Add more hadits items as needed
-    ];
-    const haditsContainer = document.getElementById("haditsContainer");
-    haditsContainer.innerHTML = haditsData.map(hadits => `
+      <!-- Search Form -->
+      <div class="search-form">
+        <div class="search-container">
+          <input type="text" placeholder="Search" class="search-input" />
+          <button class="search-button">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="search-icon"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M21 21l-4.35-4.35M10 4a6 6 0 100 12 6 6 0 000-12z"
+              />
+            </svg>
+            <span>Search</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Hadits Results -->
+      <div class="hadits-container" id="haditsContainer"></div>
+    </div>
+
+    <script>
+      const haditsData = [
+        {
+          no: "Shahih Muslim - Hadits No. 1234",
+          arab: "لحَدَّثَنَا مُسَدَّدٌ قَالَ حَدَّثَنَا يَحْيَى عَنْ شُعْبَةَ عَنْ قَتَادَةَ عَنْ أَنَسٍ رَضِيَ اللَّهُ عَنْهُ عَنْ النَّبِيِّ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ وَعَنْ حُسَيْنٍ الْمُعَلِّمِ قَالَ حَدَّثَنَا قَتَادَةُ عَنْ أَنَسٍ عَنْ النَّبِيِّ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ قَالَ لَا يُؤْمِنُ أَحَدُكُمْ حَتَّى يُحِبَّ لِأَخِيهِ مَا يُحِبُّ لِنَفْسِهِ",
+          translation:
+            "Telah menceritakan kepada kami Musaddad berkata, telah menceritakan kepada kami Yahya dari Syubah dari Qotadah dari Anas dari Nabi shallallahu alaihi wasallam Dan dari Husain Al Mualim berkata, telah menceritakan kepada kami Qotadah dari Anas dari Nabi shallallahu alaihi wasallam, beliau bersabda: Tidaklah beriman seseorang dari kalian sehingga dia mencintai untuk saudaranya sebagaimana dia mencintai untuk dirinya sendiri",
+        },
+        {
+          no: "Shahih Bukhari - Hadits No. 5678",
+          arab: "حَدَّثَنَا مُسَدَّدٌ قَالَ حَدَّثَنَا يَحْيَى عَنْ شُعْبَةَ عَنْ قَتَادَةَ عَنْ أَنَسٍ رَضِيَ اللَّهُ عَنْهُ عَنْ النَّبِيِّ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ وَعَنْ حُسَيْنٍ الْمُعَلِّمِ قَالَ حَدَّثَنَا قَتَادَةُ عَنْ أَنَسٍ عَنْ النَّبِيِّ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ قَالَ لَا يُؤْمِنُ أَحَدُكُمْ حَتَّى يُحِبَّ لِأَخِيهِ مَا يُحِبُّ لِنَفْسِهِإِنَّمَا الأَعْمَالُ بِالنِّيَّاتِ",
+          translation:
+            "Telah menceritakan kepada kami Musaddad berkata, telah menceritakan kepada kami Yahya dari Syubah dari Qotadah dari Anas dari Nabi shallallahu alaihi wasallam Dan dari Husain Al Mualim berkata, telah menceritakan kepada kami Qotadah dari Anas dari Nabi shallallahu alaihi wasallam, beliau bersabda: Tidaklah beriman seseorang dari kalian sehingga dia mencintai untuk saudaranya sebagaimana dia mencintai untuk dirinya sendiri",
+        },
+        // Add more hadits items as needed
+      ];
+      const haditsContainer = document.getElementById("haditsContainer");
+      haditsContainer.innerHTML = haditsData
+        .map(
+          (hadits) => `
     <div class="hadits-item">
       <div class="hadits-info">
         <span>${hadits.no}</span>
@@ -113,8 +191,9 @@
         <p class="translation-text">"${hadits.translation}"</p>
       </div>
     </div>
-  `).join("");
-  </script>
-</body>
-
+  `
+        )
+        .join("");
+    </script>
+  </body>
 </html>
